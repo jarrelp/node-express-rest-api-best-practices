@@ -8,7 +8,7 @@
         "start": "node app.js",
         "lint": "eslint --fix .",
         "format": "prettier .",
-        "prepare": "husky install",
+        "prepare": "husky install && cp -a .husky/. .git/hooks/",
         "dev": "nodemon 'npm run lint && npm run start'"
     },
     "keywords": [],
