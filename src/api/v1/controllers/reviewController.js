@@ -75,8 +75,19 @@ const deleteReview = async (req, res) => {
     }
 
     checkPermissions(req.user, review.user);
-    await review.remove();
+
+    await Review.findOneAndRemove({ _id: reviewId });
     res.status(StatusCodes.OK).json({ msg: 'Success! Review removed' });
+
+    // const review = await Review.findOne({ _id: reviewId });
+
+    // if (!review) {
+    //     throw new CustomError.NotFoundError(`No review with id ${reviewId}`);
+    // }
+
+    // checkPermissions(req.user, review.user);
+    // await review.remove();
+    // res.status(StatusCodes.OK).json({ msg: 'Success! Review removed' });
 };
 
 const getSingleProductReviews = async (req, res) => {
