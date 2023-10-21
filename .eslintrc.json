@@ -1,0 +1,66 @@
+{
+    "root": true,
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": ["eslint-config-airbnb-base", "prettier"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src/"]
+            }
+        }
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "impliedStrict": true
+        },
+        "ecmaVersion": "latest"
+    },
+    "plugins": ["unicorn", "flowtype", "import", "promise", "security", "node", "prettier"],
+    "rules": {
+        "no-underscore-dangle": 0,
+        "no-param-reassign": 0,
+        "import/order": 0,
+        "import/no-cycle": 0,
+        "no-console": 0,
+        "prefer-destructuring": 0,
+        "no-shadow": 0,
+        "import/prefer-default-export": 0,
+        "prefer-regex-literals": 0,
+        "no-promise-executor-return": 0,
+        "no-unsafe-optional-chaining": 0,
+        "import/no-named-as-default": 0,
+        "no-unused-vars": [
+            1,
+            {
+                "ignoreRestSiblings": false
+            }
+        ],
+        "unicorn/no-fn-reference-in-iterator": "off",
+        "unicorn/no-array-for-each": "off",
+        "unicorn/no-null": "off",
+        "unicorn/consistent-destructuring": "off",
+        "unicorn/no-array-reduce": "off",
+        "unicorn/prefer-spread": "off",
+        "unicorn/no-array-callback-reference": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/no-useless-undefined": "off",
+        "unicorn/prevent-abbreviations": "off",
+        "prettier/prettier": [
+            2,
+            {
+                "bracketSpacing": true,
+                "printWidth": 140,
+                "singleQuote": true,
+                "trailingComma": "none",
+                "tabWidth": 4,
+                "useTabs": false,
+                "endOfLine": "auto"
+            }
+        ]
+    }
+}
