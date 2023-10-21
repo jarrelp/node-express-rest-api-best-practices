@@ -1,18 +1,11 @@
 {
     "root": true,
     "env": {
-        "browser": true,
-        "es2024": true
+        "commonjs": true,
+        "es6": true,
+        "node": true
     },
-    "extends": [
-        "airbnb",
-        "plugin:import/recommended",
-        "plugin:unicorn/recommended",
-        "plugin:flowtype/recommended",
-        "plugin:promise/recommended",
-        "plugin:security/recommended",
-        "plugin:node/recommended"
-    ],
+    "extends": ["eslint-config-airbnb-base", "prettier"],
     "settings": {
         "import/resolver": {
             "node": {
@@ -20,7 +13,6 @@
             }
         }
     },
-    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -30,6 +22,7 @@
     },
     "plugins": ["unicorn", "flowtype", "import", "promise", "security", "node", "prettier"],
     "rules": {
+        "no-underscore-dangle": 0,
         "no-param-reassign": 0,
         "import/order": 0,
         "import/no-cycle": 0,
@@ -56,12 +49,7 @@
         "unicorn/no-array-callback-reference": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/no-useless-undefined": "off",
-        "unicorn/prevent-abbreviations": [
-            "error",
-            {
-                "allowList": { "Param": true, "Req": true, "Res": true }
-            }
-        ],
+        "unicorn/prevent-abbreviations": "off",
         "prettier/prettier": [
             2,
             {
